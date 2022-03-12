@@ -15,6 +15,9 @@ const resolvers = {
     author: ({ authorId }, _, { dataSources }) => {
       return dataSources.trackApi.getAuthor(authorId);
     },
+    modules: ({ id }, _, { dataSources }) => {
+      return dataSources.trackApi.getTrackModules(id);
+    },
   },
 };
 

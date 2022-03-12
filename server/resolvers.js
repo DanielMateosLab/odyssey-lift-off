@@ -2,7 +2,9 @@ const resolvers = {
   Query: {
     // Returns an array of tracks that will be used to populate
     // the client homepage grid
-    tracksForHome: (parent, args, context, info) => {},
+    tracksForHome: (_, __, { dataSources }) => {
+      return dataSources.trackApi.getTracksForHome();
+    },
   },
 };
 

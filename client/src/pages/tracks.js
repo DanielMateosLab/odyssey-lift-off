@@ -25,12 +25,12 @@ export const TRACKS = gql`
  * We display a grid of tracks fetched with useQuery with the TRACKS query
  */
 const Tracks = () => {
-  const query = useQuery(TRACKS);
+  const { loading, error, data } = useQuery(TRACKS);
 
   return (
     <Layout grid>
-      <QueryResult {...query}>
-        {query.data?.tracksForHome?.map((track) => (
+      <QueryResult {...{ loading, error, data }}>
+        {data?.tracksForHome?.map((track) => (
           <TrackCard track={track} />
         ))}
       </QueryResult>

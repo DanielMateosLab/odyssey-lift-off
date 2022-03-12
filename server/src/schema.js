@@ -15,6 +15,10 @@ const typeDefs = gql`
     thumbnail: String
     length: Int
     modulesCount: Int
+    "The track's complete description, can be in Markdown format"
+    description: String
+    "The number of times a track has been viewed"
+    numberOfViews: Int
   }
 
   "Author of a complete Track or a Module"

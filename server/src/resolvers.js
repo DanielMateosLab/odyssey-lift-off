@@ -5,6 +5,10 @@ const resolvers = {
     tracksForHome: (_, __, { dataSources }) => {
       return dataSources.trackApi.getTracksForHome();
     },
+    // Get a single track by its id
+    track: (_, { id }, { dataSources }) => {
+      return dataSources.trackApi.getTrack(id);
+    },
   },
 
   Track: {

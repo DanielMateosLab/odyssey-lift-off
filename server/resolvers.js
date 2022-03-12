@@ -6,6 +6,12 @@ const resolvers = {
       return dataSources.trackApi.getTracksForHome();
     },
   },
+
+  Track: {
+    author: ({ authorId }, _, { dataSources }) => {
+      return dataSources.trackApi.getAuthor(authorId);
+    },
+  },
 };
 
 module.exports = resolvers;

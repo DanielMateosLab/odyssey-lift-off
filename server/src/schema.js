@@ -29,7 +29,10 @@ const typeDefs = gql`
     author: Author!
     "Thumbail image url"
     thumbnail: String
-    length: Int
+    "The track's full duration, in seconds"
+    durationInSeconds: Int
+    "The track's approximate length to complete, in seconds"
+    length: Int @deprecated(reason: "Use durationInSeconds")
     modulesCount: Int
     "The track's complete description, can be in Markdown format"
     description: String
@@ -44,8 +47,10 @@ const typeDefs = gql`
     id: ID!
     "The Module's title"
     title: String!
+    "The module's video duration, in seconds"
+    durationInSeconds: Int
     "The Module's length in minutes"
-    length: Int
+    length: Int @deprecated(reason: "Use durationInSeconds")
   }
 
   "Author of a complete Track or a Module"
